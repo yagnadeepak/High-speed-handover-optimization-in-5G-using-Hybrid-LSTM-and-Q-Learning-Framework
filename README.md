@@ -1,14 +1,14 @@
 This repository contains a comprehensive MATLAB simulation platform for evaluating and comparing advanced handover strategies in 5G mmWave networks, specifically designed for high-speed mobility scenarios like trains. The core of this project is to demonstrate the significant performance gains of an intelligent, AI-driven handover mechanism (Multi-Agent Q-Learning) when compared against traditional and simpler predictive algorithms.
 
-The entire simulation, from environment modeling to final report generation, is contained within the `LSTM_Testing.m` script.
+The entire simulation, from environment modeling to final report generation, is contained within the main **source code** script.
 
-##  Environment 
+## Simulation Environment
 
 The script constructs a detailed and realistic virtual world to test the handover algorithms under challenging conditions.
 
 * **Network Type**: A 5G network operating in the **28 GHz mmWave** frequency band.
 * **Geography**: A linear **10 km track** representing a high-speed railway, served by **20 Base Stations** (BSs) positioned every 500 meters.
-* **Mobile Users**: **5 high-speed trains**, each moving at a constant velocity of **300 km/h**. 
+* **Mobile Users**: **5 high-speed trains**, each moving at a constant velocity of **300 km/h**.
 * **Channel Realism**: The simulation doesn't just use ideal conditions. It incorporates crucial real-world channel effects:
     * **Path Loss & Shadow Fading**: Realistic signal degradation over distance and due to obstructions.
     * **Doppler Effect**: Signal distortion and degradation directly resulting from the trains' high velocity.
@@ -30,7 +30,6 @@ This is the most advanced, AI-driven approach. Each train acts as an intelligent
 * **Actions**: At each step, the agent can choose to **Stay** with the current BS, initiate a **Handover** to a better BS, or establish **Dual Connectivity** for enhanced reliability.
 * **Complex Reward Function**: The agent's learning is guided by a sophisticated reward system. It gets positive rewards for high **throughput** and stable **QoS**, but is penalized for the **cost of handovers**, high **network load**, and the negative impacts of the **Doppler effect**. This teaches the agent to make balanced decisions that optimize overall performance, not just signal strength.
 
-
 ## Key Features & Methodology
 
 This simulation platform goes beyond a simple comparison and includes several advanced analytical stages:
@@ -46,7 +45,7 @@ The source code is written in MATLAB. You must use the MATLAB environment to run
 
 ### Prerequisites
 * **MATLAB**: R2020a or newer is recommended. The Parallel Computing Toolbox is also recommended as the script will attempt to use it (`parpool`).
-* **C/C++ Compiler**: Ensure you have a compiler configured with MATLAB (run `mex -setup` in MATLAB to check). While this script is pure `.m` code, this is good practice for MATLAB simulations.
+* **C/C++ Compiler**: Ensure you have a compiler configured with MATLAB (run `mex -setup` in MATLAB to check). While the provided source code is a pure `.m` file, this is good practice for MATLAB simulations.
 
 ### Execution Steps
 1.  **Clone the Repository**:
@@ -54,9 +53,9 @@ The source code is written in MATLAB. You must use the MATLAB environment to run
     git clone [https://github.com/your-username/High-speed-handover-optimization-in-5G-using-Hybrid-LSTM-and-Q-Learning-Framework.git](https://github.com/your-username/High-speed-handover-optimization-in-5G-using-Hybrid-LSTM-and-Q-Learning-Framework.git)
     ```
 2.  **Open MATLAB**: Launch MATLAB and use its file browser to navigate into the cloned repository folder.
-3.  **Run the Script**: In the MATLAB Command Window, simply run the main file:
+3.  **Run the Script**: In the MATLAB Command Window, run the main source code file (e.g., `main_simulation.m`):
     ```matlab
-    >> LSTM_Testing
+    >> main_simulation
     ```
 
 ---
@@ -70,7 +69,7 @@ After running the script, you can expect the following:
     * Throughput comparison between the three algorithms.
     * Performance analysis across different network scenarios.
     * A detailed plot of the Q-Learning agent's throughput and handover events over time.
-    * A comparison of the adaptive vs. non-adaptive AI models. 
+    * A comparison of the adaptive vs. non-adaptive AI models.
 3.  **Final Report**: A summary table will be printed in the command window, presenting the final performance metrics (Handover Success Rate, Average Throughput, Latency, etc.) for each algorithm.
 4.  **Saved Data**: A file named `high_speed_network_simulation_results.mat` will be created in the directory, containing all the data generated during the simulation for your own further analysis.
 
@@ -80,4 +79,9 @@ After running the script, you can expect the following:
 
 
 
+
+
+
+
+Tools
 
